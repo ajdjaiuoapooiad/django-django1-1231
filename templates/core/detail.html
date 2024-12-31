@@ -35,6 +35,7 @@
         </tbody>
       </table>
       <a href="{% url 'like' p.id %}">いいね {{p.like}}</a>
+      <a href="{% url 'update' p.id %}">編集する</a>
       <a href="{% url 'delete' p.id %}">削除する</a>
 
   {% endblock  %}
