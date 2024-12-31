@@ -56,5 +56,11 @@ def delete(request,pk):
     post=Post.objects.get(pk=pk)
     post.delete()
     return redirect('index')
+
+def like(request,pk):
+    post=Post.objects.get(pk=pk)
+    post.like += 1
+    post.save()
+    return redirect('index')
     
     
