@@ -23,7 +23,7 @@
             <tr>
                 <th scope="row">{{p.id}}</th>
                 <td>{{p.user}}</td>
-                <td>{{p.text}}</td>
+                <td><a href="{% url 'detail' p.id %}" class="text-dark">{{p.text}}</a></td>
             </tr>
             {% endfor %}
           

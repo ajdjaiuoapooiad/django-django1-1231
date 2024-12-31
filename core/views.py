@@ -52,4 +52,9 @@ def update(request,pk):
     }
     return render(request,'core/create.html',context)
 
+def delete(request,pk):
+    post=Post.objects.get(pk=pk)
+    post.delete()
+    return redirect('index')
+    
     
