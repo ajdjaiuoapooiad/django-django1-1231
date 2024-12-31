@@ -4,6 +4,8 @@ from django.urls import path
 from core import views
 
 urlpatterns = [
-    path('index',views.index),
+    path('index',views.index,name='index'),
     path('post/<int:pk>',views.detail,name='detail'),
+    path('create',views.create),
+
 ]
