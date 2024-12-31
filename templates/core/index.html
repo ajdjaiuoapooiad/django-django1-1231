@@ -4,40 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
     <h1>Post Index</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>user</th>
-                <th>text</th>
-            </tr>
-
+          <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>text</th>
+          </tr>
         </thead>
-
         <tbody>
+            {% for p in posts %}
             <tr>
-                <td>1</td>
-                <td>yukito</td>
-                <td>hello</td>
+                <th scope="row">{{p.id}}</th>
+                <td>{{p.user}}</td>
+                <td>{{p.text}}</td>
             </tr>
-
-            <tr>
-                <td>2</td>
-                <td>jun</td>
-                <td>thanks</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>tarou</td>
-                <td>Wow</td>
-            </tr>
-
+            {% endfor %}
+          
+          
         </tbody>
-    </table>
+      </table>
 </body>
 </html>
