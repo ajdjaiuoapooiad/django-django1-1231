@@ -35,3 +35,21 @@ def create(request):
         'form': form,
     }
     return render(request,'core/create.html',context)
+
+def update(request,pk):
+    post=Post.objects.get(pk=pk)
+    form=PostForm(instance=post)
+    if request.method == 'POST':
+        form=PostForm(request.POST,instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form=PostForm(instance=post)
+        
+    context={
+        'form': form,
+    }
+    return render(request,'core/create.html',context)
+
+    
